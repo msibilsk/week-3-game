@@ -5,31 +5,39 @@ body {
 	text-align: center;
 	background-color: #4f7417;
 	color: #3c2a1c;
+	padding-bottom: 10px;
+}
+.navbar h1 {
+	font-weight: bold;
 }
 .col-md-6 {
+	/* I wanted this border image to be a thing but it was just funky
 	border: 45px solid transparent;
 	border-image: url("../images/christmas_lights.jpg") 45 45 repeat;
-	/*border: 10px dotted #9c0224;*/
-	height: 400px;
-	margin-top: 30px;
+	*/
+	border: 10px dotted #9c0224;
+	height: 460px;
 	text-align: center;
 }
 #firstP {
-	margin-top: 40px;
+	margin-top: 30px;
 }
 p {
 	color: #3c2a1c;
-	margin: 20px;
+	margin: 30px;
 	font-weight: bold;
 }
 #blankSpaces {
 	margin-top: 40px;
 	letter-spacing: 10px;
+	font-weight: bold;
 }
-
-#ornament_kitten {
-	margin-top: 20px;
-	border-radius: 50%;
+#mantle_kitten {
+	border: 5px solid #9c0224;
 }
-
-/* link to cute css christmas lights: https://codepen.io/chrisdoble/pen/ZbmOXO */
+#stocking_kittens {
+	margin-top: 30px;
+	border: 5px solid #9c0224;
+	height: 177px;
+	width: 284px;
+}

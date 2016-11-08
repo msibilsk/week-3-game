@@ -1,4 +1,4 @@
-//initializes wins
+//initializes number of wins
 var wins = 0;
 
 var displayWins = function() {
@@ -8,7 +8,7 @@ var displayWins = function() {
 
 displayWins();
 
-//initializes losses
+//initializes number of losses
 var losses = 0;
 
 var displayLosses = function() {
@@ -19,7 +19,7 @@ var displayLosses = function() {
 displayLosses();
 
 //array of words to select from
-var christmasWords = ["angel", "bells", "birth", "blizzard", "blustery", "boots", "bough", "bow", "box", "candle", "candy", "cane", "cap", "card", "carolers", "caroling", "carols", "celebrate", "celebration", "ceremony", "charity", "chestnuts", "chill", "chilly", "chimney", "Christmas", "Christmastide", "cider", "coal", "cold", "cookie", "December", "decorate", "decorations", "display", "eggnog", "elf", "elves", "eve", "evergreen", "exchange", "family", "Father", "feast", "Feliz", "Navidad", "festival", "festive", "fir", "fireplace", "firewood", "frankincense", "frosty", "Snowman", "fruitcake", "garland", "gift", "giving", "gingerbread", "give", "gold", "goodwill", "goose", "green", "greetings", "guest", "happy", "holiday", "holly", "hope", "chocolate", "cider", "hug", "skates", "icicle", "icy", "ivy", "Jesus", "jingle", "jolly", "joy", "joyful", "Noel", "kings", "Krampus", "Kringle", "lights", "list", "log", "love", "manger", "merry", "mistletoe", "mittens", "myrrh", "nativity", "naughty", "nice", "nippy", "Noel", "North", "nutcracker", "occasion", "ornaments", "package", "pageant", "parade", "partridge", "party", "pie", "tree", "pinecone", "pudding", "poinsettia", "popcorn", "presents", "receive", "red", "reindeer", "rejoice", "reunion", "ribbon", "ritual", "Rudolph", "Nicholas", "sales", "Santa", "scarf", "Scrooge", "season", "shopping", "skate", "sled", "sleigh", "sleigh bells", "snow", "snowball", "snowbound", "snowfall", "snowflake", "snowman", "snowy", "socks", "spirit", "star", "Saint", "stocking", "stocking stuffer", "sugarplum", "sweater", "tidings", "tinsel", "toboggan", "togetherness", "toy", "tradition", "tree", "trimming", "trips", "turkey", "unwrap", "vacation", "visit", "wassail", "winter", "wintertime", "wintry", "wise men", "wish", "wonder", "workshop", "wrap", "wrapping paper", "wreath", "Xmas", "yule", "log", "yuletide"];
+var christmasWords = ["meow", "purrfect", "paws", "treats", "yarnball", "kitten", "whiskers", "angel", "bells", "birth", "blizzard", "blustery", "boots", "bough", "bow", "box", "candle", "candy", "cane", "cap", "card", "carolers", "caroling", "carols", "celebrate", "celebration", "ceremony", "charity", "chestnuts", "chill", "chilly", "chimney", "Christmas", "Christmastide", "cider", "coal", "cold", "cookie", "December", "decorate", "decorations", "display", "eggnog", "elf", "elves", "eve", "evergreen", "exchange", "family", "Father", "feast", "Feliz", "Navidad", "festival", "festive", "fir", "fireplace", "firewood", "frankincense", "frosty", "Snowman", "fruitcake", "garland", "gift", "giving", "gingerbread", "give", "gold", "goodwill", "goose", "green", "greetings", "guest", "happy", "holiday", "holly", "hope", "chocolate", "cider", "hug", "skates", "icicle", "icy", "ivy", "Jesus", "jingle", "jolly", "joy", "joyful", "Noel", "kings", "Krampus", "Kringle", "lights", "list", "log", "love", "manger", "merry", "mistletoe", "mittens", "myrrh", "nativity", "naughty", "nice", "nippy", "Noel", "North", "nutcracker", "occasion", "ornaments", "package", "pageant", "parade", "partridge", "party", "pie", "tree", "pinecone", "pudding", "poinsettia", "popcorn", "presents", "receive", "red", "reindeer", "rejoice", "reunion", "ribbon", "ritual", "Rudolph", "Nicholas", "sales", "Santa", "scarf", "Scrooge", "season", "shopping", "skate", "sled", "sleigh", "bells", "snow", "snowball", "snowbound", "snowfall", "snowflake", "snowman", "snowy", "socks", "spirit", "star", "Saint", "stocking", "sugarplum", "sweater", "tidings", "tinsel", "toboggan", "togetherness", "toy", "tradition", "tree", "trimming", "trips", "turkey", "unwrap", "vacation", "visit", "wassail", "winter", "wintertime", "wintry", "wish", "wonder", "workshop", "wrap", "wreath", "Xmas", "yule", "log", "yuletide"];
 
 var guessWord;
 
@@ -33,7 +33,6 @@ var displayCurrentWord = function() {
 
 var remainingGuesses;
 
-//displays number of remaining guesses
 var displayRemainingGuesses = function() {
     var htmlGuesses = "<p>Remaining Guesses: " + remainingGuesses + "</p>";
     document.querySelector("#remaining").innerHTML = htmlGuesses;
@@ -101,6 +100,8 @@ document.onkeyup = function(event) {
 
     if (guessWord.indexOf(blankSpaces) === 0) {
         wins++;
+        var song = new Audio("assets/sound/jinglebells.wav");
+        song.play();
         lastWin = "<p>Last Win: " + guessWord + "</p>";
         document.querySelector("#lastWin").innerHTML = lastWin;
         displayWins();
